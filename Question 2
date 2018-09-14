@@ -1,0 +1,93 @@
+Problem : Design an app for calling Taxis.
+
+Identify Objects and Behaviors :
+
+Things(Object/Entity):
+	Information (Data/State):
+	Services(Behaviors/Actions):
+
+Things Required for the Project :
+
+User : 
+	Data : name, currentlocation
+	Behavior : String getName()
+		      Location getCurrentlocation()
+		      
+
+Taxi App :  		
+	Behavior : User userLogin ( username , password )
+		listoftaxis[ ] searchNearbyTaxi ( Current location numberofpassengers)
+		bookTaxi ( taxi )
+		listoftaxis[ ] getalltaxis ( )
+		
+
+Internet :
+		Data : Internet
+		Behavior : internetIsAvailable( )  
+
+Taxi :
+	Data : Available, Taxilocation
+	Behavior :
+
+
+Program :
+
+Username : “ Vinnie” 
+password : “abc123”
+Internet Internet
+
+
+Sequence of invoking Behaviours on objects 
+
+simulate( )
+ {
+
+	if (mobile.internetIsAvailable==true)
+	{
+
+		UserVinnie = TaxiApp.userlogin ( “Vinnie” , “abc123” )
+
+		Listoftaxis = taxiapp.searchNearbyTaxi ( UserVinnie.currentloaction , 2 ) 
+
+		for ( i=0 ; i < Listoftaxis.length ; i++ )
+		{
+			taxi = Listoftaxis [ i ] 
+			
+			if ( taxi.Available == true )
+			 
+				taxiApp.bookTaxi(taxi)
+				taxi.Availble = false 
+				break;
+			end
+		}
+	}
+}
+
+
+listoftaxis[ ] searchNearbyTaxis( Currentlocation numberofpassengers) 
+{
+		
+	for ( s=0 ; s < Taxiapp.getalltaxis( ).length ; s++ )
+	{
+
+		if ( s.taxilocation - UserVinnie.currentlocation < 100 )
+		{
+			Listoftaxis[ Listoftaxis.length ] = s.taxi ;
+					
+		}
+	}
+	return Listoftaxis ;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

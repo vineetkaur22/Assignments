@@ -1,0 +1,88 @@
+Problem : Order food in a restaurant
+
+Identify Objects and Behaviors :
+
+Things(Object/Entity):
+	Information (Data/State):
+	Services(Behaviors/Actions):
+
+Things Required for the Project :
+
+Customer : 
+			Data : Name , Address , Phone 
+
+			Behavior :
+			getFavouriteCuisine ()
+			Restaurant pickRestaurant (RestaurantList[])
+			FoodItemSelected pickFood (fooditemslist[])
+
+
+Internet : 	Data :Websitewithlistofrestaurants
+			Behavior :searchInternet()
+
+Foodcart :  Data : Foodcart 
+
+			Behavior :
+			RestaurantList getListOfRestaurants ( Cuisine )
+			selectRestaurant ( Restaurant )
+			addFoodToCart ( Foodname Quantity Spicelevel)
+			placeOrder ()
+			deliverFood (Address)
+
+
+Restaurant: Data :Cuisine , Menu 
+
+			Behavior :
+			Fooditemslist getFoodItems()
+
+
+Sequence of flow - Invoke objects with behaviors 
+
+Customer Emily 
+Internet 
+Websitewithlistofrestaurants 
+Restaurant website 
+Creditcard Card 
+
+
+Emily.connectInternet
+
+If (Internet.isavailable == true)
+
+{
+	Foodcart = Internet.searchInternet(Websitewithlistofrestaurants)
+
+	emilyCuisine = Emily.getFavouriteCuisine ()
+
+	Restuarantlist[] = Foodcart.getListOfRestaurants(emilycuisine)
+
+	pickedRestaurant = Emily.pickRestaurant (Restuarantlist[])
+
+	fooditemslist[]=  pickedRestaurant.getFoodItems()
+
+	pickedFood = Emily.pickFood (fooditemslist[])
+
+	Foodcart.addFoodToCart (pickedFood "1" "Medium Spicy")
+
+	Foodcart.placeOrder()
+
+	Print "Order Placed"
+
+	Foodcart.deliverFood (Emily.address)
+
+}
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+

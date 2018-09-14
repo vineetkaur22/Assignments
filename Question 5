@@ -1,0 +1,75 @@
+Problem : Design a course registration platform
+
+Identify Objects and Behaviors :
+
+Things(Object/Entity):
+	Information (Data/State):
+	Services(Behaviors/Actions):
+
+Things Required for the Project :
+
+Student :
+		Data : StudentName , ID 
+		Behavior : Boolean hasInterest( Course )
+
+Internet :
+
+University :
+		Data : UniversityDepartmentName , UniversityPortal 
+		Behavior : 
+				Student loginStudent (studentid Password)
+				registerForCourse (Student, Course)
+				Course[] getCourseList(Department semester year)
+				numberOfCreditsRegistered (Student)
+
+Course :
+		Data : Coursename , CourseID , CourseCredit , CourseDescription 
+
+		
+courseregistration ()
+{
+
+	Student s1 = University.loginStudent ("v.victoria" "abc123")
+	listofcourse[] = UniversityPortal.getCourseList ("CS" "Fall" "2018")
+
+	minCreditsRequire = 6;
+	maxCreditsAllowed = 12;
+
+	totalCreditsRegistered = 0;
+ 	for(i=0;i< length.listofcourse[]; i++)
+	{
+		newCredits = totalCreditsRegistered + listofcourse[i].CourseCredit;
+		if(newCredits <= 12 && s1.hasInterest (listofcourse[i]) == true)
+		{
+				UniversityPortal.registerForCourse(s1,listofcourse[i]);
+				totalCreditsRegistered = newCredits;
+		}
+
+	}
+	if(numberOfCreditsRegistered (s1) < 6)
+		Print "Student Registration not complete";
+	else
+		Print "Student Registration complete";
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

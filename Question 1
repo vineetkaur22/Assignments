@@ -1,0 +1,63 @@
+Problem : Program to order a hotel online before a trip.
+
+Identify Objects and Behaviors :
+
+Things(Object/Entity):
+	Information (Data/State):
+	Services(Behaviors/Actions):
+
+Things Required for the Project :
+	
+	HotelBookingPortal :
+		Data: WebURL 
+		Behavior: User loginUser( Username, Password )
+				  ListOfHotels hotelSearch ( location, priceRange, noOfGuest, Date ) 
+				  Hotel getHotelWithBestReviews ( List(Hotel) )
+
+	User :
+		Data : Name , Email , Phone , Billingaddress 
+		Behavior : 	
+								
+	Hotel :
+		Data : hotelName , location 
+		Behavior:  Roomnumber bookTheRoom ( GuestName, Date , CreditCard )
+	
+	CreditCard :
+		Data: cardNo, exiryDate, CVV, cardHolderName
+		Behavior: CreditCard getCardDetails ()
+
+
+	Internet :
+		Data: Websites
+		Behavior: Website goToWebsite( WebUrl ) , isAvailable( )
+
+
+Program 
+
+Username: “Jane”, UserPswd: “abc123”
+Internet Internet
+Search: “Seattle” , “200-400” , “2”, “10/01/2018”
+Credit Card: “1234 5678 9245 6315”, “12/23/2024”, “333”
+Creditcard Visa2134
+
+simulatehotelbooking( )
+
+{
+
+	if( Internet.isAvailable() == true )
+
+	{
+		
+		Portal = Internet.goToWebsite ( HotelBookingPortal.WebURL )
+
+		UserJane = Portal.LoginUser( “Jane”, “abc123” )
+		
+		HotelList = Portal.search (“Seattle” , “200-400” , “2”, “10/01/2018”)
+	
+		HotelSelected = Portal.getHotelWithBestReviews(HotelList)
+		
+		isRoomBooked = HotelSelected.bookTheRoom( UserJane.name, “10/01/2018”, CreditCard )
+		
+	}
+
+}

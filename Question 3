@@ -1,0 +1,85 @@
+Problem : Design a job searching and posting platform 
+
+Identify Objects and Behaviors :
+
+Things(Object/Entity):
+	Information (Data/State):
+	Services(Behaviors/Actions):
+
+Things Required for the Project :
+
+Candidate :
+	Data : Name , Phone , Experience
+	Behavior : listofskills getSkills ()
+				selectedjob selectJob (joblist[])
+
+Job Portal : 
+	Data : WebURL
+	Behavior : 	user loginUser ( username password )
+				jobsPost (job description)
+				applyJob (Candidate , jobSelected)
+				jobs jobSearch (Field Experience City )
+				postJob (job)
+
+Recruiter : 
+			Behavior : Job addJob()
+					   addJobDescription (Job)
+
+
+Job : 
+	Data : JobDescription 
+	
+
+Internet :
+		Data: Websites
+		Behavior: Website goToWebsite( WebUrl ) , isAvailable( )
+
+
+Program 
+
+Candidate Username: “Jeremy”, Candidate Pswd: “abc123” 
+Recruiter Username: "Payal" , Recruiter Pswd: "xyz789"
+Internet Internet
+
+simulatejobsearching ()
+{
+
+	if( Internet.isAvailable() == true )
+	{
+		
+		Portal = Internet.goToWebsite ( jobPortal.WebURL )
+
+	 	Candidate = Portal.loginUser( “Jeremy”, “abc123” )
+
+		joblist[]=Portal.jobSearch ("software" , "3" , "Seattle")
+
+		If (Candidate.Experience <=1 )	{	
+			Print ("Candidate is a Beginner")
+		}
+		else{
+			Print ("Candidate is Experienced")
+		}
+
+		jobSelected = Candidate.selectJob (joblist[])
+
+		Portal.applyJob (Candidate , jobSelected)
+
+	}
+
+}
+
+simulatejobposting ()
+{
+	Portal = Internet.goToWebsite ( jobPortal.WebURL )
+
+	Recruiter = Portal.loginUser( “Payal”, “xyz789” )
+
+	job	= Recruiter.addJob()	
+
+	Recruiter.addJobDescription (job)
+
+	portal.postJob (job) 
+
+}
+
+
