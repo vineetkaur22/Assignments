@@ -1,5 +1,5 @@
 import java.util.Scanner;
- 
+ //score 5/5 
  abstract class Moody {
 	
 	protected abstract String getMood() ;

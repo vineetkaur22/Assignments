@@ -1,6 +1,6 @@
 
 class Student{
-	
+	// score 5/5
 	private String name;
 	private int id ;
 	
