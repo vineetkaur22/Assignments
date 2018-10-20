@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +37,6 @@ public class Spiral {
 		list = s.spiralOrder(a);
 		System.out.println(list);
 }
-
-
 
 public List<Integer> spiralOrder(int[ ][ ] matrix) {
 	

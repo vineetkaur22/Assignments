@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -25,7 +24,6 @@ class DessertShoppe {
 	double taxrate;
 	String nameOfTheStore;
 	int maxSizeOfName = 25;
-	//int widthOfItemBill = 40;
 	
 	public DessertShoppe(double taxrate, String nameOfTheStore ) {
 		this.taxrate = taxrate;
@@ -54,11 +52,6 @@ class Candy extends DessertItem {
 		int result = (int )Math.round((weight *priceInCents) / 100d);
 		return result;
 	}
-
-	//	public String toString() {
-	//		String str = weight + " lbs. @ " + price + " /lb." + "\n" + name + "\t\t\t" + getCost();
-	//		return str;
-	//	}
 }
 
 class Cookie extends DessertItem{
@@ -112,7 +105,6 @@ class Checkout extends java.lang.Object {
 	DessertShoppe ds = new DessertShoppe(6.54 , "M & M Dessert Shoppe ");
 
 	public Checkout() {
-		
 		listOfDessertItems = new Vector<DessertItem>();
 	}
 
@@ -179,11 +171,12 @@ class Checkout extends java.lang.Object {
 	
 	public String getItemBillName(String itemName) {
 		String value;
-		if(itemName.length() > 25) {
-			return itemName.substring(0, 25);
+		if(itemName.length() > ds.maxSizeOfName) {
+			return itemName.substring(0, ds.maxSizeOfName);
 		}
 		else {
-			return String.format("%-25s", itemName);
+			String str = "%-" + ds.maxSizeOfName + "s";
+			return String.format(str, itemName);
 		}
 	}
 
